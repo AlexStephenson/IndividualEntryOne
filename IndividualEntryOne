@@ -1,0 +1,33 @@
+Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Dim rn As New Random
+        Label1.Visible = False
+        TextBox1.Text = ""
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Dim rn As New Random
+        Label1.Text = (rn.Next(0, 11))
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If TextBox1.Text = Label1.Text Then
+            MsgBox("Congratulations! You have guessed correctly!")
+        End If
+
+        If TextBox1.Text > Label1.Text Then
+            MsgBox("Your guess was too high!")
+        End If
+
+        If TextBox1.Text < Label1.Text Then
+            MsgBox("Your guess was too low!")
+        End If
+
+    End Sub
+End Class
